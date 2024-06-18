@@ -126,6 +126,7 @@ alias ll='colorls -lA --sd'
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
+alias k='kubectl'
 
 # starship
 eval "$(starship init zsh)"
