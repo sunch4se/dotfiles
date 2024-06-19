@@ -30,8 +30,26 @@ else
   alias ls='ls -h --color=auto'
   echo "eza not found"
 fi
-alias v="nvim"
-alias vi="nvim"
-alias vim="nvim"
-alias k='kubectl'
-alias py="python"
+
+if command -v nvim &> /dev/null; then
+  alias v="nvim"
+  alias vi="nvim"
+  alias vim="nvim"
+else
+  alias v="vim"
+  alias vi="vim"
+  alias vim="vim"
+  echo "nvim not found"
+fi
+
+if command -v kubectl &> /dev/null; then
+  alias k='kubectl'
+else
+  echo "kubectl not found"
+fi
+
+if command -v python &> /dev/null; then
+  alias py="python"
+else
+  echo "python not found"
+fi
