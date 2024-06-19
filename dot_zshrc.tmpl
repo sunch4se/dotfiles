@@ -1,13 +1,6 @@
 plugins=(zsh-interactive-cd git vscode)
 
 # machine-specific configuration
-{{- if eq .chezmoi.os "darwin" }}
-export PATH="$PATH:/Users/ben/.local/bin"
-if [ -f "/Users/ben/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/ben/.config/fabric/fabric-bootstrap.inc"; fi
-
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-{{- end }}
 
 # shell integrations
 if command -v zoxide &> /dev/null; then
@@ -29,9 +22,14 @@ else
 fi
 
 # alias
-alias l='eza -la --icons -s type'
-alias ls='eza -l --icons -s type'
-alias ll='eza -la --icons -s type'
+if command -v eza &> /dev/null; then
+  alias l='eza -la --icons -s type'
+  alias ls='eza -l --icons -s type'
+  alias ll='eza -la --icons -s type'
+else
+  alias ls='ls -h --color=auto'
+  echo "eza not found"
+fi
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
