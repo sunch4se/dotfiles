@@ -3,9 +3,11 @@ plugins=(zsh-interactive-cd git vscode)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Created by `pipx` on 2024-06-04 07:56:06
+# machine-specific configuration
+{{- if eq .chezmoi.os "darwin" }}
 export PATH="$PATH:/Users/ben/.local/bin"
 if [ -f "/Users/ben/.config/fabric/fabric-bootstrap.inc" ]; then . "/Users/ben/.config/fabric/fabric-bootstrap.inc"; fi
+{{- end }}
 
 # shell integrations
 if command -v zoxide &> /dev/null; then
