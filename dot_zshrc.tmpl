@@ -3,12 +3,17 @@ plugins=(zsh-interactive-cd git vscode)
 # path
 export PATH="$PATH:$HOME/.local/bin"
 
-# machine-specific configuration
+# mac-specific configuration
 {{- if eq .chezmoi.os "darwin" }}
 if [ -f "$HOME/.config/fabric/fabric-bootstrap.inc" ]; then . "$HOME/.config/fabric/fabric-bootstrap.inc"; fi
 
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+{{- end }}
+
+# linux-specific configuration
+{{- if eq .chezmoi.os "linux" }}
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 {{- end }}
 
 # shell integrations
