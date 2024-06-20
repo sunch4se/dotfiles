@@ -62,6 +62,12 @@ else
   echo "kubectl not found"
 fi
 
+if command -v chezmoi &> /dev/null; then
+  alias cm='chezmoi'
+else
+  echo "chezmoi not found"
+fi
+
 alias py="python"
 alias ..='cd ..'
 alias ...='cd ../..'
