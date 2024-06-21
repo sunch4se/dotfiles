@@ -75,6 +75,12 @@ else
   echo "bat not found"
 fi
 
+if command -v tofu &> /dev/null; then
+  alias tf='tofu'
+else
+  echo "(open)tofu not found"
+fi
+
 alias py="python"
 alias ..='cd ..'
 alias ...='cd ../..'
