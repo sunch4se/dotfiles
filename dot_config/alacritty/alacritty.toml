@@ -1,0 +1,32 @@
+import = [
+    "~/.config/alacritty/themes/themes/catppuccin_mocha.toml"
+]
+
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 10
+padding.y = 10
+
+decorations = "Buttonless"
+
+opacity = 0.7
+blur = true
+
+option_as_alt = "Both"
+
+[font]
+normal = { family = "JetBrainsMono Nerd Font", style = "Light" }
+size = 12
+
+[keyboard]
+bindings = [
+  { key = "Right", mods = "Alt", chars = "\u001BF" },
+  { key = "Left",  mods = "Alt", chars = "\u001BB" },
+]
+
+#[misc]
+[shell]
+program = "/bin/zsh"
+args = [ "-l", "-c", "tmux attach || tmux new " ]
