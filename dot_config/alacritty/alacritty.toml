@@ -6,15 +6,16 @@ import = [
 TERM = "xterm-256color"
 
 [window]
-padding.x = 10
-padding.y = 10
-
+padding = { x = 1, y = 1 }
+dynamic_padding = false
 decorations = "Buttonless"
-
-opacity = 0.7
-blur = true
-
+#opacity = 0.7
+#blur = true
 option_as_alt = "Both"
+dynamic_title = false
+
+[selection]
+save_to_clipboard = true
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Light" }
