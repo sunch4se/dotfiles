@@ -122,3 +122,8 @@ setopt hist_ignore_all_dups
 setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
+
+# azure cli auto completion
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+source /opt/homebrew/etc/bash_completion.d/az
