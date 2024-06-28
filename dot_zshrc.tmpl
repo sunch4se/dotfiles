@@ -67,7 +67,7 @@ else
 fi
 
 if command -v bat &> /dev/null; then
-  alias cat='bat'
+  alias cat='bat --plain'
 else
   alias cat='cat'
   echo "bat not found"
