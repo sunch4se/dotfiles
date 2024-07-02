@@ -1,0 +1,11 @@
+# change window focus within space
+ctrl + alt - j : yabai -m window --focus south
+ctrl + alt - k : yabai -m window --focus north
+ctrl + alt - h : yabai -m window --focus west
+ctrl + alt - l : yabai -m window --focus east
+
+# set insertion point in focused container
+shift + ctrl + alt - up : yabai -m window --insert north
+shift + ctrl + alt - right : yabai -m window --insert east
+shift + ctrl + alt - down : yabai -m window --insert south
+shift + ctrl + alt - left : yabai -m window --insert west
