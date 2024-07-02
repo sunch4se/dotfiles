@@ -73,6 +73,13 @@ else
   echo "bat not found"
 fi
 
+if command -v xh &> /dev/null; then
+  alias curl='xh'
+else
+  alias curl='curl'
+  echo "xh not found"
+fi
+
 if command -v tofu &> /dev/null; then
   alias tf='tofu'
 else
